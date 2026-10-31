@@ -103,7 +103,7 @@
     font-size: 1.05rem; font-weight: 300; color: var(--white-dim);
     max-width: 480px; line-height: 1.65;
   }
-  .hero-actions { display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem; }
+  .hero-actions { display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap; margin-top: 0.5rem; }
   .btn-primary {
     font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1rem;
     letter-spacing: 0.1em; text-transform: uppercase; color: var(--bg);
@@ -169,6 +169,9 @@
     letter-spacing: 0.05em; color: var(--white); margin-bottom: 0.5rem; text-transform: uppercase;
   }
   .feature-desc { font-size: 0.88rem; color: var(--white-dim); line-height: 1.65; font-weight: 300; }
+
+  /* COMMUNITY */
+  .community-grid { grid-template-columns: repeat(4, 1fr); }
 
   /* GALLERY */
   .gallery-grid {
@@ -276,7 +279,7 @@
   @media (max-width: 768px) {
     nav ul { display: none; }
     .about-grid, .mods-layout { grid-template-columns: 1fr; gap: 2rem; }
-    .features-grid { grid-template-columns: 1fr; }
+    .features-grid, .community-grid { grid-template-columns: 1fr; }
     .gallery-grid { grid-template-columns: 1fr 1fr; }
     
     .hero-title { font-size: 3rem; }
@@ -299,11 +302,16 @@
 	<li><a href="#community">Community</a></li>
     <li><a href="#download">Download</a></li>
   </ul>
-  <a href="https://github.com/zerospades/zerospades" style="color:var(--white-dim); transition:color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--white-dim)'" title="GitHub">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
-    </svg>
-  </a>
+  <div style="display:flex; align-items:center; gap:1.1rem;">
+    <a href="https://discord.gg/t64rKedpAu" style="color:var(--white-dim); transition:color 0.2s; display:flex;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--white-dim)'" title="Discord">
+      <i class="si si-discord" style="font-size:22px; line-height:22px;"></i>
+    </a>
+    <a href="https://github.com/zerospades/zerospades" style="color:var(--white-dim); transition:color 0.2s; display:flex;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--white-dim)'" title="GitHub">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+      </svg>
+    </a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -318,6 +326,7 @@
     <div class="hero-actions">
       <a href="https://github.com/zerospades/zerospades/releases/latest" class="btn-primary">Download Free</a>
       <a href="https://github.com/zerospades/zerospades" class="btn-secondary">View on GitHub →</a>
+      <a href="https://discord.gg/t64rKedpAu" class="btn-secondary">Join Discord →</a>
     </div>
   </div>
   <div class="hero-scroll">
@@ -547,7 +556,17 @@
     <span class="section-label">Community</span>
     <h2 class="section-title">Join the fight</h2>
     <p class="section-body" style="margin-bottom:3rem;">Ace of Spades is kept alive by its community. Find servers, meet players, and get involved.</p>
-    <div class="features-grid">
+    <div class="features-grid community-grid">
+
+      <!-- Discord -->
+      <div class="feature-card">
+        <i class="si si-discord feature-icon" style="font-size:36px; line-height:36px; display:block;"></i>
+        <div class="feature-name">Discord</div>
+        <p class="feature-desc">The official ZeroSpades server. Get help, report bugs, share feedback, follow development, and talk about everything Ace of Spades.</p>
+        <div style="margin-top:1.25rem;">
+          <a href="https://discord.gg/t64rKedpAu" class="btn-secondary">Join the Discord →</a>
+        </div>
+      </div>
 
       <div class="feature-card">
         <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -596,6 +615,7 @@
     <li><a href="https://github.com/zerospades/zerospades/wiki">Wiki</a></li>
     <li><a href="https://github.com/zerospades/zerospades-paks">Mods</a></li>
     <li><a href="https://github.com/zerospades/zerospades/issues">Issues</a></li>
+    <li><a href="https://discord.gg/t64rKedpAu">Discord</a></li>
   </ul>
   <p class="footer-copy">ZeroSpades is open-source software licensed under the GPLv3. Based on OpenSpades, originally created by YVT and maintained by <a href="https://github.com/yvt/openspades/graphs/contributors?all=1" style="color:inherit; opacity:0.6;">a community effort</a>.</p>
 </footer>
